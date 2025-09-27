@@ -591,71 +591,8 @@
             );
         };
 
-        /**
-         * Pagination Component
-         * @param {Object} props - Component props
-         */
-         const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-            const getPageNumbers = () => {
-                const pages = [];
-                const maxVisiblePages = 5;
-                
-                let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-                
-                if (endPage - startPage + 1 < maxVisiblePages) {
-                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
-                }
-                
-                for (let i = startPage; i <= endPage; i++) {
-                    pages.push(i);
-                }
-                
-                return pages;
-            };
-
-            return (
-                <div className="pagination">
-                    <button 
-                        onClick={() => onPageChange(currentPage - 1)}
-                        disabled={currentPage === 1}
-                        className="pagination-btn"
-                        aria-label="Previous page"
-                    >
-                        Previous
-                    </button>
-                    
-                    <div className="page-numbers">
-                        {getPageNumbers().map(page => (
-                            <button
-                                key={page}
-                                onClick={() => onPageChange(page)}
-                                className={`page-number ${page === currentPage ? 'active' : ''}`}
-                                aria-label={`Page ${page}`}
-                                aria-current={page === currentPage ? 'page' : undefined}
-                            >
-                                {page}
-                            </button>
-                        ))}
-                    </div>
-                    
-                    <button 
-                        onClick={() => onPageChange(currentPage + 1)}
-                        disabled={currentPage === totalPages}
-                        className="pagination-btn"
-                        aria-label="Next page"
-                    >
-                        Next
-                    </button>
-                    
-                    <span className="pagination-info">
-                        Page {currentPage} of {totalPages}
-                    </span>
-                </div>
-            );
-        };
-
         
+
         /**
              * Fetch podcasts from API
              */
