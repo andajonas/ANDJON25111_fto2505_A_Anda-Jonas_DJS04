@@ -734,23 +734,7 @@
                 return filtered;
             }, [podcasts, searchTerm, selectedGenre, sortBy]);
 
-            /**
-             * Reset current page when filters change
-             */
-             useEffect(() => {
-                setCurrentPage(1);
-            }, [searchTerm, selectedGenre, sortBy]);
-
-            /**
-             * Handle podcast card click
-             */
-             const handlePodcastClick = (podcast) => {
-                setSelectedPodcast(podcast);
-                setIsModalOpen(true);
-            };
-
             
-
 
 
 
