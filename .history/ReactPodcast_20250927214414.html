@@ -540,61 +540,7 @@
                 </div>
             );
         };
-
-        /**
-         * Controls Component for search, filter, and sort functionality
-         * @param {Object} props - Component props
-         */
-         const Controls = ({ searchTerm, onSearchChange, selectedGenre, onGenreChange, sortBy, onSortChange, onReset }) => {
-            return (
-                <div className="controls">
-                    <div className="search-box">
-                        <span className="search-icon">🔍</span>
-                        <input
-                            type="text"
-                            placeholder="Search podcasts by title..."
-                            value={searchTerm}
-                            onChange={(e) => onSearchChange(e.target.value)}
-                            className="search-input"
-                            aria-label="Search podcasts"
-                        />
-                    </div>
-                    
-                    <select 
-                        value={selectedGenre} 
-                        onChange={(e) => onGenreChange(e.target.value)}
-                        className="filter-select"
-                        aria-label="Filter by genre"
-                    >
-                        <option value="">All Genres</option>
-                        {Object.entries(genreMap).map(([id, name]) => (
-                            <option key={id} value={id}>{name}</option>
-                        ))}
-                    </select>
-                    
-                    <select 
-                        value={sortBy} 
-                        onChange={(e) => onSortChange(e.target.value)}
-                        className="sort-select"
-                        aria-label="Sort podcasts"
-                    >
-                        <option value="newest">Newest First</option>
-                        <option value="oldest">Oldest First</option>
-                        <option value="title-asc">Title A-Z</option>
-                        <option value="title-desc">Title Z-A</option>
-                    </select>
-                    
-                    <button onClick={onReset} className="reset-btn">
-                        Reset Filters
-                    </button>
-                </div>
-            );
-        };
         
-
-
-
-
 
 
 
