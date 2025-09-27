@@ -655,24 +655,7 @@
             );
         };
 
-        /**
-         * Main App Component
-         * Manages state and orchestrates all functionality
-         */
-         const App = () => {
-            const [podcasts, setPodcasts] = useState([]);
-            const [loading, setLoading] = useState(true);
-            const [error, setError] = useState(null);
-            const [selectedPodcast, setSelectedPodcast] = useState(null);
-            const [isModalOpen, setIsModalOpen] = useState(false);
-            
-            // Filter and sort state
-            const [searchTerm, setSearchTerm] = useState('');
-            const [selectedGenre, setSelectedGenre] = useState('');
-            const [sortBy, setSortBy] = useState('newest');
-            const [currentPage, setCurrentPage] = useState(1);
-            const podcastsPerPage = 9;
-
+        
 
         /**
              * Fetch podcasts from API
