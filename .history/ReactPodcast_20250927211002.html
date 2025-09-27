@@ -411,8 +411,8 @@
          * @param {string} dateString - ISO date string
          * @returns {string} Formatted relative time string
          */
-        const formatDate = (dateString) => {
-    const date = new Date(dateString);
+         const formatDate = (dateString) => {
+            const date = new Date(dateString);
     const now = new Date();
     const diffTime = Math.abs(now - date);
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
@@ -423,8 +423,7 @@
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
     if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
     return `${Math.floor(diffDays / 365)} years ago`;
-}; 
-
+};
 
 
 
